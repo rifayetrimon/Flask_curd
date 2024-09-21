@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}My Django Project{% endblock %}</title>
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- Add any additional head content here -->
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navbar Section -->
+  <nav class="bg-gray-800 p-4">
+    <div class="container mx-auto">
+      <div class="flex justify-between items-center">
+        <div class="text-white text-2xl font-bold">
+          <a href="">
+            <img src="https://i.ibb.co/dLmykPf/nav-logo.png" alt="Logo">
+          </a>
+        </div>
+        <div class="space-x-4">
+          <a href="" class="text-white hover:text-gray-400">Home</a>
+          <a href="" class="text-white hover:text-gray-400">Add Book</a>
+          <a href="" class="text-white hover:text-gray-400">Lented Book</a>
+          <a href="" class="text-white hover:text-gray-400">Return</a>
+          <a href="" class="text-white hover:text-gray-400">Log Out</a>
+          <a href="" class="text-white hover:text-gray-400">Profile</a>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  {% block content %}{% endblock content %}
+
+
+</body>
+</html>
