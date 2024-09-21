@@ -34,13 +34,13 @@
 
             <!-- Buttons -->
             <div class="mt-6">
-                <a href="{% url 'home' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <a href="{{ url_for('home') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     Book List
                 </a>
-                <a href="{% url 'update' book_details.id %}" class="ml-2 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
+                <a href="{{ url_for('update', id=book_details.id) }}" class="ml-2 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
                     Edit Book
                 </a>
-                <a href="{% url 'delete' book_details.id %}" class="ml-2 bg-red-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
+                <a href="{{ url_for('delete', id=book_details.id) }}" class="ml-2 bg-red-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
                     Delete
                 </a>
             </div>

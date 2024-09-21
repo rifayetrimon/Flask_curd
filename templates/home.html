@@ -26,7 +26,7 @@
                 <!-- Loop through books -->
                 {% for book in books %}
                 <tr class="border-b border-gray-200 hover:bg-gray-50">
-                    <td class="px-5 py-5 text-sm"><a href="{% url 'singel' id=book.id %}">{{ book.title }}</a></td>
+                    <td class="px-5 py-5 text-sm"><a href="{{ url_for('book', id=book.id) }}">{{ book.title }}</a></td>
                     <td class="px-5 py-5 text-sm"> 
                     {% if book.author %}
                         {% for author in book.author %}
@@ -39,13 +39,9 @@
                     <td class="px-5 py-5 text-sm">{{ book.year }}</td>
                     <td class="px-5 py-5 text-sm">{{ book.price }} $</td>
                     <td class="px-5 py-5 text-sm">{{ book.quantity }}</td>
-                    <td><a href="{% url 'lent' book.id %}" class="ml-2 bg-green-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
+                    <td><a href="" class="ml-2 bg-green-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
                         Lent
                     </a></td>
-                </tr>
-                {% empty %}
-                <tr>
-                    <td colspan="6" class="px-5 py-5 text-center text-sm">No books available</td>
                 </tr>
                 {% endfor %}
             </tbody>
